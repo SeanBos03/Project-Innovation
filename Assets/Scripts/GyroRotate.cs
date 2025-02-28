@@ -22,6 +22,10 @@ public class GyroRotate : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private Vector3 maxRotation; //max allowed rotation in an axis
     [SerializeField] private Vector3 minRotation; //mininum allowed rotation in an an axis
+    [SerializeField] private Vector3 minRotationBig;
+    [SerializeField] private Vector3 maxRotationBig;
+
+
     void Start()
     {
         if (!hasStartThreshold)
@@ -86,30 +90,90 @@ public class GyroRotate : MonoBehaviour
 
         if (hasStarted)
         {
-        
-            if (!includeX)
+
+            if (includeX)
+            {
+                //gyroEuler.x = Mathf.Clamp(gyroEuler.x, minRotation.x, maxRotation.x);
+                gyroEuler.x = RotationClamp(gyroEuler.x, minRotation.x, maxRotation.x,
+                    minRotationBig.x, maxRotationBig.x);
+            }
+            else
             {
                 gyroEuler.x = 0;
             }
-            if (!includeY)
+
+            if (includeY)
+            {
+                gyroEuler.y = RotationClamp(gyroEuler.y, minRotation.y, maxRotation.y,
+                    minRotationBig.y, maxRotationBig.y);
+            }
+            else
             {
                 gyroEuler.y = 0;
             }
-            if (!includeZ)
+
+            if (includeZ)
+            {
+                gyroEuler.z = RotationClamp(gyroEuler.z, minRotation.z, maxRotation.z,
+                    minRotationBig.z, maxRotationBig.z);
+            }
+            else
             {
                 gyroEuler.z = 0;
             }
 
-            Quaternion result = Quaternion.Euler(gyroEuler);
+            Quaternion resultRotation = Quaternion.Euler(gyroEuler);
 
             if (yAndZSwitch)
             {
-                float zValue = result.z;
-                result.z = result.y;
-                result.y = zValue;
+                float zValue = resultRotation.z;
+                resultRotation.z = resultRotation.y;
+                resultRotation.y = zValue;
             }
-            transform.localRotation = result * baseDirection;
+
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, resultRotation * baseDirection, Time.deltaTime * rotationSpeed);
         }
+    }
+
+    //angle should be values between 0 - 360
+    float RotationClamp(float angle, float min, float max, float min1, float max2)
+    {
+        if (angle < 180)
+        {
+            return Mathf.Clamp(angle, min, max);
+        }
+
+        return Mathf.Clamp(angle, min1, max2);
+
+        //bool isNegative = false;
+
+        //if (angle > 180)
+        //{
+        //    angle -= 360;
+        //}
+
+        //if (angle < 0)
+        //{
+        //    isNegative = true;
+        //    angle *= -1;
+        //}
+
+        //if (angle < min)
+        //{
+        //    angle = min;
+        //}
+
+        //if (angle > max)
+        //{
+        //    angle = max;
+        //}
+
+        //if (isNegative)
+        //{
+        //    return angle * -1;
+        //}
+
+        //return angle;
     }
 
     bool IsWithinThreshold(float angle, float big, float small)

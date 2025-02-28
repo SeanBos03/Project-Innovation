@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//for achieving the thrid person effect
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
