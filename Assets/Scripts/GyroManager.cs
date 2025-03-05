@@ -12,8 +12,17 @@ public class GyroManager : MonoBehaviour
     bool gyroIsEnabled;
     Quaternion gyroRotation;
 
+    /*
+     * 0° = North
+90° = East
+180° = South
+270° = West
+    */
+
     void Start()
     {
+        Input.compass.enabled = true;
+
         if (SystemInfo.supportsGyroscope)
         {
             gyro = Input.gyro;
@@ -37,7 +46,7 @@ public class GyroManager : MonoBehaviour
                 phoneEulerDisplayText.gameObject.SetActive(true);
                 phoneQuaternionDisplay.gameObject.SetActive(true);
                 phoneEulerDisplayText.text = "Phone rotation (Euler): " + gyro.attitude.eulerAngles;
-                phoneQuaternionDisplay.text = "Phone rotation (Quaternion): " + gyro.attitude;
+                phoneQuaternionDisplay.text = "Compass: " + Input.compass.trueHeading;
             }    
         }
 

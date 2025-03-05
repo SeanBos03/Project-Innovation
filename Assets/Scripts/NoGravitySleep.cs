@@ -31,6 +31,8 @@ public class NoGravitySleep : MonoBehaviour
 
         if (rb.velocity.magnitude > 0)
         {
+            //i dont know but i've been told that gyroscope isn't worth the woe
+            //look at by script
             RaycastHit hit;
             Vector3 moveDirection = rb.velocity.normalized; //making sure it's pure direction
             float moveDistance = rb.velocity.magnitude * Time.fixedDeltaTime + skinWidth; //the distance object will move

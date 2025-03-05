@@ -21,7 +21,7 @@ public class ToggleCamera : MonoBehaviour
             GameData.cam = 1;
             cam1.SetActive(true);
             cam2.SetActive(false);
-            return;
+            return; 
         }
     }
 }
