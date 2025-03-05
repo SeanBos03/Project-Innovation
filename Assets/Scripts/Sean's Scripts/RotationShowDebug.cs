@@ -5,11 +5,11 @@ using TMPro;
 
 public class RotationShowDebug : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI daText;
+    [SerializeField] TextMeshProUGUI theObjectMeasureText;
     [SerializeField] GameObject theObject;
     // Update is called once per frame
     void Update()
     {
-        daText.text = "Envrionment local rotation: " + theObject.transform.localRotation.eulerAngles;
+        theObjectMeasureText.text = "Envrionment local rotation: " + theObject.transform.localRotation.eulerAngles;
     }
 }

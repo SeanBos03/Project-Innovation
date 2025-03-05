@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Rendering;
 
 public class GyroRotate : MonoBehaviour
 {
-    [SerializeField] GameObject theCamera;
     [SerializeField] Quaternion baseDirection = Quaternion.identity; //0,0,1,0
     [SerializeField] GyroManager gyroManager;
     [SerializeField] bool includeX = true;
@@ -17,9 +15,7 @@ public class GyroRotate : MonoBehaviour
     [SerializeField] Vector3 smallThreshold;//euler
     bool hasStarted = false;
     bool timerOver = false;
-    [SerializeField] TextMeshProUGUI textaaa;
-    [SerializeField] TextMeshProUGUI textaaaCam;
-    [SerializeField] TextMeshProUGUI textaaaCamMeasure;
+    [SerializeField] TextMeshProUGUI textGameState;
     [SerializeField] bool yAndZSwitch = false;
 
     [SerializeField] private float rotationSpeed = 5f;
@@ -49,7 +45,7 @@ public class GyroRotate : MonoBehaviour
     {
         if (!timerOver)
         {
-            textaaa.text = "Stating...";
+            textGameState.text = "Stating...";
             return;
         }
 
@@ -58,26 +54,30 @@ public class GyroRotate : MonoBehaviour
             return;
         }
 
-        // Get the gyro rotation (quaternion)
         Quaternion gyroRotation = gyroManager.getGyroRotation();
-
-        // Apply threshold checks if not started
         if (!hasStarted)
         {
             bool xGood = true;
             bool yGood = true;
             bool zGood = true;
-            textaaa.text = "Rotate the phone to a good orientation";
+            textGameState.text = "Rotate the phone to a good orientation";
 
-            // Check if the gyro data is within thresholds
-            if (includeX) xGood = IsWithinThreshold(gyroRotation.eulerAngles.x, bigThreshold.x, smallThreshold.x);
-            if (includeY) yGood = IsWithinThreshold(gyroRotation.eulerAngles.y, bigThreshold.y, smallThreshold.y);
-            if (includeZ) zGood = IsWithinThreshold(gyroRotation.eulerAngles.z, bigThreshold.z, smallThreshold.z);
+            if (includeX)
+            {
+                xGood = IsWithinThreshold(gyroRotation.eulerAngles.x, bigThreshold.x, smallThreshold.x);
+            }
+            if (includeY)
+            {
+                yGood = IsWithinThreshold(gyroRotation.eulerAngles.y, bigThreshold.y, smallThreshold.y);
+            }
+            if (includeZ)
+            {
+                zGood = IsWithinThreshold(gyroRotation.eulerAngles.z, bigThreshold.z, smallThreshold.z);
+            }
 
-            // If orientation is good, mark as started
             if (xGood && yGood && zGood)
             {
-                textaaa.text = "All done";
+                textGameState.text = "All done";
                 hasStarted = true;
             }
             else
@@ -86,13 +86,9 @@ public class GyroRotate : MonoBehaviour
             }
         }
 
-        // Now apply rotation logic if it has started
         if (hasStarted)
         {
-            // Create the new rotation quaternion using the gyro data
             Quaternion resultRotation = gyroRotation;
-
-            // Apply any additional rotations or adjustments (like clamping or axis switches)
             Vector3 gyroEuler = gyroRotation.eulerAngles;
 
             if (includeX)
@@ -122,7 +118,6 @@ public class GyroRotate : MonoBehaviour
                 gyroEuler.z = 0;
             }
 
-            // Apply adjusted gyro Euler angles to the result rotation
             resultRotation = Quaternion.Euler(gyroEuler);
 
             if (yAndZSwitch)
@@ -132,7 +127,6 @@ public class GyroRotate : MonoBehaviour
                 resultRotation.y = zValue;
             }
 
-            // Lerp between the current rotation and the desired rotation
             transform.localRotation = Quaternion.Lerp(transform.localRotation, resultRotation * baseDirection, Time.deltaTime * rotationSpeed);
         }
     }
