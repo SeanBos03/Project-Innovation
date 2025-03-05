@@ -1062,6 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountOfLives: 5
   lifeAmountText: {fileID: 173678787}
+  stickText: {fileID: 741055210}
 --- !u!1 &520250342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,9 +3762,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2101608577}
-        m_TargetAssemblyTypeName: ToggleCamera, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 466355854}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleStick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
