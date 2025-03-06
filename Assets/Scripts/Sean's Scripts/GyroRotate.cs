@@ -13,7 +13,7 @@ public class GyroRotate : MonoBehaviour
     [SerializeField] bool hasStartThreshold;
     [SerializeField] Vector3 bigThreshold;//euler
     [SerializeField] Vector3 smallThreshold;//euler
-    bool hasStarted = false;
+    bool hasStarted;
     bool timerOver = false;
     [SerializeField] TextMeshProUGUI textGameState;
     [SerializeField] bool yAndZSwitch = false;
@@ -27,6 +27,7 @@ public class GyroRotate : MonoBehaviour
 
     void Start()
     {
+        hasStarted = false;
         if (!hasStartThreshold)
         {
             hasStarted = true;
