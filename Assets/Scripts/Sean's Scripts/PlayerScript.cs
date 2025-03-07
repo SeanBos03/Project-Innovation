@@ -21,8 +21,12 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Health"))
         {
-            GameData.life += other.gameObject.GetComponent<HealhItem>().GetHealth();
-            Destroy(other.gameObject);
+            if (GameData.life != GameData.lifeMax)
+            {
+                GameData.life += other.gameObject.GetComponent<HealhItem>().GetHealth();
+                Destroy(other.gameObject);
+            }
+
         }
 
         if (GameData.life <= 0)

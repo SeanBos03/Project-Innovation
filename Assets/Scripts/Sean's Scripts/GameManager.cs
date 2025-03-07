@@ -5,6 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject mainCam;
     [SerializeField] int amountOfTimeOutMessageSeconds = 3;
     [SerializeField] int amountOfTimeSeconds = 30;
     [SerializeField] int amountOfLives;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
             Invoke("DisableTimerMessage", amountOfTimeOutMessageSeconds);
         }
 
+        GameData.mainCamDeaultRotation = mainCam.transform.rotation;
         timerText.text = "Time: " + amountOfTimeSeconds;
         GameData.life = amountOfLives;
         GameData.lifeMax = amountOfLives;
@@ -69,5 +71,11 @@ public class GameManager : MonoBehaviour
     public void ToggleStick()
     {
         GameData.shouldStick = !GameData.shouldStick;
+    }
+
+    public void ResetCam()
+    {
+        mainCam.transform.rotation = GameData.mainCamDeaultRotation;
+        Debug.Log(GameData.mainCamDeaultRotation.eulerAngles);
     }
 }

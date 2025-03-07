@@ -1,6 +1,7 @@
-
+using UnityEngine;
 public static class GameData
 {
+    public static Quaternion mainCamDeaultRotation;
     public static int currentLevel = 1;
     public static bool timeRanOut = false;
     public static bool shouldStick = true;
