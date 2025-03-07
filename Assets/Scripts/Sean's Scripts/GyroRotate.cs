@@ -10,9 +10,9 @@ public class GyroRotate : MonoBehaviour
     [SerializeField] bool includeX = true;
     [SerializeField] bool includeY = true;
     [SerializeField] bool includeZ = true;
-    [SerializeField] bool hasStartThreshold;
-    [SerializeField] Vector3 bigThreshold;//euler
-    [SerializeField] Vector3 smallThreshold;//euler
+    [SerializeField] bool hasStartThreshold; //ignore starter threshold if true
+    [SerializeField] Vector3 bigThreshold; //what values the phone's orientation need to be for it to start
+    [SerializeField] Vector3 smallThreshold;
     bool hasStarted;
     bool timerOver = false;
     [SerializeField] TextMeshProUGUI textGameState;
@@ -27,10 +27,10 @@ public class GyroRotate : MonoBehaviour
 
     void Start()
     {
-        hasStarted = false;
-        if (!hasStartThreshold)
+        textGameState.text = "Stating...";
+        if (!hasStartThreshold) 
         {
-            hasStarted = true;
+            hasStarted = true; //will ignore starter threshold check if true
         }
 
         StartCoroutine(RotateTimer());
@@ -46,7 +46,6 @@ public class GyroRotate : MonoBehaviour
     {
         if (!timerOver)
         {
-            textGameState.text = "Stating...";
             return;
         }
 
@@ -56,6 +55,8 @@ public class GyroRotate : MonoBehaviour
         }
 
         Quaternion gyroRotation = gyroManager.getGyroRotation();
+
+        //if not started, check the player orients phone near the correct orientation
         if (!hasStarted)
         {
             bool xGood = true;
@@ -91,7 +92,6 @@ public class GyroRotate : MonoBehaviour
         {
             Quaternion resultRotation = gyroRotation;
             Vector3 gyroEuler = gyroRotation.eulerAngles;
-
             if (includeX)
             {
                 gyroEuler.x = RotationClamp(gyroEuler.x, minRotation.x, maxRotation.x, minRotationBig.x, maxRotationBig.x);
@@ -143,6 +143,7 @@ public class GyroRotate : MonoBehaviour
         return Mathf.Clamp(angle, min1, max2);
     }
 
+    //make sure the angle is within the two thresholds the gyroscope
     bool IsWithinThreshold(float angle, float big, float small)
     {
         angle = ValidAngle(angle);
