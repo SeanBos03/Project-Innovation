@@ -86,6 +86,7 @@ public class RoateObjectGyroscope : MonoBehaviour
     Vector3 CalculateRotation()
     {
         Quaternion rotationAdjustment = Quaternion.Euler(0, 0, 90) * Quaternion.Inverse(gyro.attitude); //find the rotation diff btw the orginal orientation and current orientation
+        rotationValueResult.text = "RotationAdjustment: " + rotationAdjustment.eulerAngles;
         Vector3 rotationAdjustmentAdjusted = (rotationAdjustment).eulerAngles;
 
 

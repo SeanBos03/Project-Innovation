@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
         timerText.text = "Time: " + amountOfTimeSeconds;
         GameData.life = amountOfLives;
+        GameData.lifeMax = amountOfLives;
 
         if (!debug_disableTimer)
         {
