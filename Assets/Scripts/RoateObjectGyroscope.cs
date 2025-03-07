@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoateObjectGyroscope : MonoBehaviour
@@ -18,6 +19,13 @@ public class RoateObjectGyroscope : MonoBehaviour
     [SerializeField] float timeBeforeStart = 2f;
     [SerializeField] float startXThresholdValue;
     [SerializeField] float startZThresholdValue;
+    [SerializeField] float rotateSpeed = 1.5f;
+    [SerializeField] float xMaxValue;
+    [SerializeField] float zMaxValue;
+
+    [SerializeField] bool invertX;
+    [SerializeField] bool invertZ;
+    [SerializeField] bool switchValues;
     void Start()
     {
         if (SystemInfo.supportsGyroscope)
@@ -69,7 +77,7 @@ public class RoateObjectGyroscope : MonoBehaviour
 
         if (isReady)
         {
-            transform.localRotation = Quaternion.Euler(result);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * rotateSpeed);
             rotationValueResult.text = "Rotation object: " + result;
         }
     }
@@ -108,10 +116,64 @@ public class RoateObjectGyroscope : MonoBehaviour
 
         //switch y and z
         Vector3 gyroRotationEulerResult = rotationAdjustmentAdjusted;
-        float theZValue = gyroRotationEulerResult.z;
         gyroRotationEulerResult.z = gyroRotationEulerResult.y;
         gyroRotationEulerResult.y = 0;
 
+        //adjust values so the they dont exceed the limit
+        bool xIsNegative = false;
+        bool zIsNegative = false;
+
+        if (gyroRotationEulerResult.x < 0)
+        {
+            gyroRotationEulerResult.x *= -1;
+            xIsNegative = true;
+        }
+
+        if (gyroRotationEulerResult.z < 0)
+        {
+            gyroRotationEulerResult.z *= -1;
+            zIsNegative = true;
+        }
+
+        if (gyroRotationEulerResult.x > xMaxValue)
+        {
+            gyroRotationEulerResult.x = xMaxValue;
+        }
+
+        if (gyroRotationEulerResult.z > zMaxValue)
+        {
+            gyroRotationEulerResult.z = zMaxValue;
+        }
+
+        if (xIsNegative)
+        {
+            gyroRotationEulerResult.x *= -1;
+        }
+
+        if (zIsNegative)
+        {
+            gyroRotationEulerResult.z *= -1;
+        }
+
+        //the result stage
+        if (invertX)
+        {
+            gyroRotationEulerResult.x *= -1;
+        }
+
+        if (invertZ)
+        {
+            gyroRotationEulerResult.z *= -1;
+        }
+
+        if (switchValues)
+        {
+            float theZValue = gyroRotationEulerResult.z;
+            gyroRotationEulerResult.z = gyroRotationEulerResult.x;
+            gyroRotationEulerResult.x = theZValue;
+        }
+
+        
         rotationValueGyro.text = "Rotation gyro: " + gyro.attitude.eulerAngles;
         rotationValueObject.text = "Rotation result: " + gyroRotationEulerResult;
         return gyroRotationEulerResult;

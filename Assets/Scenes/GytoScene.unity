@@ -2200,8 +2200,12 @@ MonoBehaviour:
   rotationValueObject: {fileID: 2121749665}
   rotationValueResult: {fileID: 448608566}
   rotationStatus: {fileID: 2027762141}
+  timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
+  rotateSpeed: 1.5
+  xMaxValue: 25
+  zMaxValue: 6
 --- !u!1 &937024103
 GameObject:
   m_ObjectHideFlags: 0
