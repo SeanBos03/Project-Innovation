@@ -334,6 +334,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344643010}
   m_CullTransparentMesh: 1
+--- !u!1 &709807770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709807772}
+  - component: {fileID: 709807771}
+  - component: {fileID: 709807773}
+  - component: {fileID: 709807774}
+  m_Layer: 0
+  m_Name: SlideShowManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &709807771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709807770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3894d6cee5f121b4bbdfe7ec3b236843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideImage: {fileID: 344643012}
+  slides:
+  - {fileID: 21300000, guid: e4f7d41061b482f4d90d84d4d8b76f41, type: 3}
+  - {fileID: 21300000, guid: 9ba922db5b41eff4e84bd4e9cbfe3767, type: 3}
+  slideDuration: 3
+  currentIndex: 0
+  timer: 0
+--- !u!4 &709807772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709807770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1030.1937, y: 690.1224, z: -10.249761}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709807773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709807770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e223199f1401d134f8ff73a4e81a18cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideImage: {fileID: 344643012}
+  slides:
+  - {fileID: 21300000, guid: 9ba922db5b41eff4e84bd4e9cbfe3767, type: 3}
+  - {fileID: 21300000, guid: e4f7d41061b482f4d90d84d4d8b76f41, type: 3}
+  fadeDuration: 1
+  displayDuration: 3
+--- !u!114 &709807774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709807770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359b140890d411b438c29c83cfd8ec67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &859361974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,6 +425,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 959740325}
     m_Modifications:
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 709807774}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSpecificScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SceneReload, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2671016968463035667, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_text
@@ -475,6 +603,7 @@ GameObject:
   - component: {fileID: 959740324}
   - component: {fileID: 959740323}
   - component: {fileID: 959740322}
+  - component: {fileID: 959740326}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -566,6 +695,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &959740326
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959740321}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1471774294
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,3 +832,4 @@ SceneRoots:
   - {fileID: 156301997}
   - {fileID: 1471774296}
   - {fileID: 959740325}
+  - {fileID: 709807772}
