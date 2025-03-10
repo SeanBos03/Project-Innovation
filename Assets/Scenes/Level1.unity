@@ -848,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushText: {fileID: 2130202755}
   forceDirection: {x: -1, y: 0, z: 0}
-  forceStrength: 1
+  forceStrength: 3
   isPushing: 1
 --- !u!1 &472300244
 GameObject:
