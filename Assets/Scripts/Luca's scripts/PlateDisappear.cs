@@ -1,35 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PressurePlate : MonoBehaviour
 {
-    public string playerName = "Player"; // Name of the player GameObject, modify if needed
-    public float disappearDelay = 1f;   // Delay before the plate disappears
-
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] float fallStrength = 1f;
+    [SerializeField] float disappearDelay = 1f; //time before plate disappears
+    bool hasStarted;
+    void OnCollisionEnter(Collision collision)
     {
-        // Debug log to check what is colliding with the plate
-        Debug.Log("Collision detected: " + collision.gameObject.name);
-
-        // Check if the object colliding with the plate is the player
-        if (collision.gameObject.name == playerName)
+        if (collision.gameObject.tag == "Player" && !hasStarted)
         {
-            Debug.Log("Player detected! Plate will disappear in " + disappearDelay + " seconds.");
             StartCoroutine(DisappearAfterDelay());
-        }
-        else
-        {
-            Debug.Log("Non-player object collided: " + collision.gameObject.name);
+            InvokeRepeating("ObjectFall", 1f, 1f);
+            hasStarted = true;
         }
     }
 
     IEnumerator DisappearAfterDelay()
     {
-        // Wait for the delay before destroying the plate
         yield return new WaitForSeconds(disappearDelay);
         Debug.Log("Pressure plate destroyed!");
-        Destroy(gameObject); // Destroy the pressure plate
+        Destroy(gameObject);
+    }
+
+    void ObjectFall()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y - fallStrength, transform.position.z);
     }
 }
 
