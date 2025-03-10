@@ -1375,12 +1375,12 @@ PrefabInstance:
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1003
+      value: -1569
       objectReference: {fileID: 0}
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 316
+      value: 365
       objectReference: {fileID: 0}
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -1964,7 +1964,7 @@ Transform:
   m_GameObject: {fileID: 395816944}
   serializedVersion: 2
   m_LocalRotation: {x: 0.018494578, y: 0.70586234, z: -0.7080818, w: -0.006047477}
-  m_LocalPosition: {x: 11.978424, y: 4.109233, z: -21.330994}
+  m_LocalPosition: {x: -162.65, y: 4.76, z: -43.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2926,6 +2926,7 @@ MonoBehaviour:
   cycleTime: 3
   amountOfForkPerCycle: 4
   minSpawnDistance: 2
+  timesBeforeSpawnReset: 3
 --- !u!1001 &556943775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3522,7 +3523,12 @@ PrefabInstance:
     - target: {fileID: -8226871792942750320, guid: 96cc5e37dbc8edb46a478bd7fb429607,
         type: 3}
       propertyPath: m_Constraints
-      value: 10
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8226871792942750320, guid: 96cc5e37dbc8edb46a478bd7fb429607,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8342347508067989656, guid: 96cc5e37dbc8edb46a478bd7fb429607,
         type: 3}
@@ -4000,7 +4006,7 @@ PrefabInstance:
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12
+      value: 322
       objectReference: {fileID: 0}
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -7674,7 +7680,7 @@ PrefabInstance:
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 289.25
+      value: 290.9
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
@@ -7684,7 +7690,7 @@ PrefabInstance:
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 168.83
+      value: 178
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
@@ -7724,6 +7730,11 @@ PrefabInstance:
     - target: {fileID: 3289660660730476154, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289660660730476154, guid: e8551693318463844a1547b20187c7a0,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -9818,8 +9829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7651e71782849a54ca68c158a37f6de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player
-  disappearDelay: 2
+  fallStrength: 1
+  disappearDelay: 3
 --- !u!65 &1837503006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10112,8 +10123,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881834227}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 277.3395, y: 9.37534, z: 189.75494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 454.65, y: 9.375341, z: 221.06999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10833,7 +10844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2039919993
 Transform:
   m_ObjectHideFlags: 0
@@ -11297,11 +11308,11 @@ SceneRoots:
   - {fileID: 227563612}
   - {fileID: 848904798}
   - {fileID: 526813746}
+  - {fileID: 1881834228}
   - {fileID: 1520038690}
   - {fileID: 1849016377}
   - {fileID: 169361566}
   - {fileID: 1296191869}
-  - {fileID: 1881834228}
   - {fileID: 619302723}
   - {fileID: 2014602519}
   - {fileID: 1340817597}

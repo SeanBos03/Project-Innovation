@@ -10,6 +10,8 @@ public class ForkSpawner : MonoBehaviour
     [SerializeField] float cycleTime;
     [SerializeField] int amountOfForkPerCycle;
     [SerializeField] float minSpawnDistance = 2.0f; //minimum distance between forks
+    [SerializeField] int timesBeforeSpawnReset = 3;
+    int currentSpawnTime = 0;
 
     private Renderer theRenderer;
     private List<Vector3> previousSpawnedForks = new List<Vector3>(); //list to track previous spawn positions
@@ -18,14 +20,20 @@ public class ForkSpawner : MonoBehaviour
     {
         theRenderer = GetComponent<Renderer>();
         InvokeRepeating("SpawnFork", 0f, cycleTime);
+
     }
 
     void SpawnFork()
     {
+        if (currentSpawnTime >= timesBeforeSpawnReset)
+        {
+            previousSpawnedForks.Clear();
+            currentSpawnTime = 0;
+        }
+
         for (int i = 0; i < amountOfForkPerCycle; i++)
         {
             Vector3 randomPoint;
-            previousSpawnedForks.Clear();
             int maxAttempts = 15; //max amount of times to try to get a valid spawn
             int attempts = 0;
 
@@ -55,6 +63,7 @@ public class ForkSpawner : MonoBehaviour
             forkSpawnRotation.y = theY;
             previousSpawnedForks.Add(randomPoint); //store the new valid spawn
             Instantiate(theForkObject, randomPoint, Quaternion.Euler(forkSpawnRotation)); //spawn the fork
+            currentSpawnTime++;
         }
     }
 
