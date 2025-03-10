@@ -496,10 +496,21 @@ MonoBehaviour:
   image1: {fileID: 344643012}
   image2: {fileID: 572293886}
   slides:
-  - {fileID: 21300000, guid: 5ffd64393db6c664682dbec6f32140cb, type: 3}
-  - {fileID: 21300000, guid: 9ba922db5b41eff4e84bd4e9cbfe3767, type: 3}
-  - {fileID: 21300000, guid: e4f7d41061b482f4d90d84d4d8b76f41, type: 3}
-  - {fileID: 21300000, guid: 5ffd64393db6c664682dbec6f32140cb, type: 3}
+  - {fileID: 21300000, guid: 4b5d5e34df0e60c48b23f361035dcef2, type: 3}
+  - {fileID: 21300000, guid: 72f3e101d647d0f418608c3ec3260712, type: 3}
+  - {fileID: 21300000, guid: f7bb4c8e556242a4fb13191292b2431d, type: 3}
+  - {fileID: 21300000, guid: e04a854adfd215149a75ffdb19c87557, type: 3}
+  - {fileID: 21300000, guid: 936e4c6c1a5685140a5d40dab89177ce, type: 3}
+  - {fileID: 21300000, guid: 128c92fd8b99d524789ffd89f4a6d491, type: 3}
+  - {fileID: 21300000, guid: d04b018cf268b5a47af365eb28b45ecc, type: 3}
+  - {fileID: 21300000, guid: 28a682854df8f4e429d82e9651f3bb35, type: 3}
+  - {fileID: 21300000, guid: fba3560fc19893c4fa5815dfa43bfcb6, type: 3}
+  - {fileID: 21300000, guid: bb58b6f833e72184fbf65743ea10b2c5, type: 3}
+  - {fileID: 21300000, guid: 1cb5c1f613c0cff4f82b642713170739, type: 3}
+  - {fileID: 21300000, guid: 1af05f478e8a11c4180b4e69b2227bb0, type: 3}
+  - {fileID: 21300000, guid: 56a9e739ce88342438bdaf4b56e8bcd0, type: 3}
+  - {fileID: 21300000, guid: ecdd79d7a82f1a846acfbe79ab562e6d, type: 3}
+  - {fileID: 21300000, guid: e06e87b079d699e4b98275791c9b4c7e, type: 3}
   fadeDuration: 0.5
   displayDuration: 1
 --- !u!114 &709807774
