@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 344643011}
   - component: {fileID: 344643013}
   - component: {fileID: 344643012}
+  - component: {fileID: 344643014}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -334,6 +335,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344643010}
   m_CullTransparentMesh: 1
+--- !u!225 &344643014
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344643010}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &709807770
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,13 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3894d6cee5f121b4bbdfe7ec3b236843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideImage: {fileID: 344643012}
-  slides:
-  - {fileID: 21300000, guid: e4f7d41061b482f4d90d84d4d8b76f41, type: 3}
-  - {fileID: 21300000, guid: 9ba922db5b41eff4e84bd4e9cbfe3767, type: 3}
-  slideDuration: 3
-  currentIndex: 0
-  timer: 0
 --- !u!4 &709807772
 Transform:
   m_ObjectHideFlags: 0
@@ -401,9 +407,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideImage: {fileID: 344643012}
   slides:
+  - {fileID: 21300000, guid: 5ffd64393db6c664682dbec6f32140cb, type: 3}
   - {fileID: 21300000, guid: 9ba922db5b41eff4e84bd4e9cbfe3767, type: 3}
   - {fileID: 21300000, guid: e4f7d41061b482f4d90d84d4d8b76f41, type: 3}
-  fadeDuration: 1
+  fadeDuration: 0.5
   displayDuration: 3
 --- !u!114 &709807774
 MonoBehaviour:
@@ -464,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SceneReload, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: level2Luca
       objectReference: {fileID: 0}
     - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -603,7 +615,6 @@ GameObject:
   - component: {fileID: 959740324}
   - component: {fileID: 959740323}
   - component: {fileID: 959740322}
-  - component: {fileID: 959740326}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -695,18 +706,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!225 &959740326
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959740321}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1471774294
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class SlideshowWithFade : MonoBehaviour
         {
             yield return StartCoroutine(FadeIn());
             yield return new WaitForSeconds(displayDuration);
-            yield return StartCoroutine(FadeOut());
+           // yield return StartCoroutine(FadeOut());
 
             currentIndex++;
             if (currentIndex < slides.Length)
@@ -52,17 +52,17 @@ public class SlideshowWithFade : MonoBehaviour
         canvasGroup.alpha = 1;
     }
 
-    IEnumerator FadeOut()
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
-            yield return null;
-        }
-        canvasGroup.alpha = 0;
-    }
+    //IEnumerator FadeOut()
+    //{
+      //  float elapsedTime = 0f;
+      //  while (elapsedTime < fadeDuration)
+      //  {
+      //      elapsedTime += Time.deltaTime;
+       //     canvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
+      //      yield return null;
+     //   }
+     //   canvasGroup.alpha = 0;
+   // }
 
     void EndCutscene()
     {
