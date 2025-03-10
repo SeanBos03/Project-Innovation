@@ -2,72 +2,68 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class SlideshowWithFade : MonoBehaviour
+public class SlideshowWithCrossfade : MonoBehaviour
 {
-    public Image slideImage; // Reference to the UI Image
-    public Sprite[] slides;  // Array of slides
-    public float fadeDuration = 1f;  // Time for fading in/out
-    public float displayDuration = 3f;  // Time before changing slides
+    public Image image1;  // First UI Image
+    public Image image2;  // Second UI Image (used for crossfade)
+    public Sprite[] slides;  // Array of slide images
+    public float fadeDuration = 1f;  // Time for fading transition
+    public float displayDuration = 3f;  // Time each slide is fully visible
 
     private int currentIndex = 0;
-    private CanvasGroup canvasGroup;
+    private bool isImage1Active = true;
 
     void Start()
     {
-        canvasGroup = slideImage.GetComponent<CanvasGroup>(); // Get the Canvas Group
         if (slides.Length > 0)
         {
-            slideImage.sprite = slides[currentIndex];
+            // Set the first image
+            image1.sprite = slides[0];
+            image1.canvasRenderer.SetAlpha(1f);  // Fully visible
+            image2.canvasRenderer.SetAlpha(0f);  // Fully transparent
+
             StartCoroutine(SlideshowSequence());
         }
     }
 
     IEnumerator SlideshowSequence()
     {
-        while (currentIndex < slides.Length)
+        while (currentIndex < slides.Length - 1) // Loop through all images
         {
-            yield return StartCoroutine(FadeIn());
             yield return new WaitForSeconds(displayDuration);
-           // yield return StartCoroutine(FadeOut());
-
-            currentIndex++;
-            if (currentIndex < slides.Length)
-            {
-                slideImage.sprite = slides[currentIndex];
-            }
+            yield return StartCoroutine(CrossfadeToNextSlide());
         }
 
-        EndCutscene();
+        EndCutscene(); // Call function when finished
     }
 
-    IEnumerator FadeIn()
+    IEnumerator CrossfadeToNextSlide()
     {
-        float elapsedTime = 0f;
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / fadeDuration);
-            yield return null;
-        }
-        canvasGroup.alpha = 1;
-    }
+        currentIndex++; // Move to next slide
 
-    //IEnumerator FadeOut()
-    //{
-      //  float elapsedTime = 0f;
-      //  while (elapsedTime < fadeDuration)
-      //  {
-      //      elapsedTime += Time.deltaTime;
-       //     canvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
-      //      yield return null;
-     //   }
-     //   canvasGroup.alpha = 0;
-   // }
+        // Determine which image is fading in and out
+        Image fadingInImage = isImage1Active ? image2 : image1;
+        Image fadingOutImage = isImage1Active ? image1 : image2;
+
+        // Set the next image on the fading-in Image
+        fadingInImage.sprite = slides[currentIndex];
+        fadingInImage.canvasRenderer.SetAlpha(0f); // Start completely transparent
+
+        // Ensure fading-out image is fully visible before fade starts
+        fadingOutImage.canvasRenderer.SetAlpha(1f);
+
+        // Crossfade transition
+        fadingInImage.CrossFadeAlpha(1f, fadeDuration, false);
+        fadingOutImage.CrossFadeAlpha(0f, fadeDuration, false);
+
+        yield return new WaitForSeconds(fadeDuration); // Wait for transition
+
+        isImage1Active = !isImage1Active; // Swap active image
+    }
 
     void EndCutscene()
     {
         Debug.Log("Cutscene Finished!");
-        // Example: Load next scene or start gameplay
-        // SceneManager.LoadScene("GameScene");
+        // SceneManager.LoadScene("NextScene"); // Uncomment if you want to load a new scene
     }
 }
