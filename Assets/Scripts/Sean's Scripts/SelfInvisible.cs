@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class SelfInvisible : MonoBehaviour
 {
+    [SerializeField] bool disableRenderer = true;
+    [SerializeField] bool disableCollider = true;
     void Start()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
-        gameObject.GetComponent<Collider>().enabled = false;
+        if (disableRenderer)
+        {
+            gameObject.GetComponent<Renderer>().enabled = false;
+        }
+
+        if (disableCollider)
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+        }
     }
 }
