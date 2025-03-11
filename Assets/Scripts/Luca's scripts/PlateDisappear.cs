@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PressurePlate : MonoBehaviour
+public class PlateDisappear : MonoBehaviour
 {
+    [SerializeField] float timeBeforeplateFalls = 1f;
     [SerializeField] float fallStrength = 1f;
     [SerializeField] float disappearDelay = 1f; //time before plate disappears
     bool hasStarted;
@@ -12,16 +13,14 @@ public class PressurePlate : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !hasStarted)
         {
-            StartCoroutine(DisappearAfterDelay());
-            InvokeRepeating("ObjectFall", 1f, 1f);
+            Invoke("DisappearAfterDelay", disappearDelay);
+            Invoke("ObjectFall", timeBeforeplateFalls);
             hasStarted = true;
         }
     }
 
-    IEnumerator DisappearAfterDelay()
+    void DisappearAfterDelay()
     {
-        yield return new WaitForSeconds(disappearDelay);
-        Debug.Log("Pressure plate destroyed!");
         Destroy(gameObject);
     }
 
