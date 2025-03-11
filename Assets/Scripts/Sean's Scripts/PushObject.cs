@@ -8,15 +8,18 @@ public class PushObject : MonoBehaviour
     public float forceStrength = 10f;
     public bool isPushing = false;
      Rigidbody rb;
+    [SerializeField] bool useForceImpulse;
+    LoudnessRecorder theLoudnessRecorder;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        theLoudnessRecorder = GetComponent<LoudnessRecorder>();
     }
 
     void FixedUpdate()
     {
-        if (isPushing)
+        if (theLoudnessRecorder.loudDetected)
         {
             pushText.text = "Push: ON";
         }
@@ -26,9 +29,17 @@ public class PushObject : MonoBehaviour
             pushText.text = "Push: OFF";
         }
 
-        if (isPushing)
+        if (theLoudnessRecorder.loudDetected || isPushing)
         {
-            rb.AddForce(forceDirection.normalized * forceStrength, ForceMode.Force);
+            if (!useForceImpulse)
+            {
+                rb.AddForce(forceDirection.normalized * forceStrength, ForceMode.Force);
+            }
+
+            else
+            {
+                rb.AddForce(forceDirection.normalized * forceStrength, ForceMode.Impulse);
+            }
         }
     }
 

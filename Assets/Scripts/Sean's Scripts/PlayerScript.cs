@@ -6,10 +6,19 @@ using UnityEngine.Rendering.Universal;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] GameManager theGameManager;
+    bool isReady = false;
     // Update is called once per frame
     void Update()
     {
-
+        if (!isReady)
+        {
+            if (GameData.rotationReady)
+            {
+                isReady = true;
+                Rigidbody rb = GetComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.None;
+            }
+        }
     }
 
     void OnCollisionEnter(Collision other)

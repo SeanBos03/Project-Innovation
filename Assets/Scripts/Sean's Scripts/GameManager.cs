@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool debug_disableTimer = false;
     void Start()
     {
+        GameData.rotationReady = false;
         if (GameData.timeRanOut)
         {
             timerMessage.gameObject.SetActive(true);

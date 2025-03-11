@@ -71,6 +71,11 @@ public class RoateObjectGyroscope : MonoBehaviour
                 {
                     isReady = true;
                     rotationStatus.text = "Start rotating";
+                    
+                    if (gameObject.tag == "MainArea")
+                    {
+                        GameData.rotationReady = true;
+                    }
                 }
             }
         }
