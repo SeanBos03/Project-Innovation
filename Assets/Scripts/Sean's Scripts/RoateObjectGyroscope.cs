@@ -15,6 +15,7 @@ public class RoateObjectGyroscope : MonoBehaviour
     [SerializeField] TextMeshProUGUI rotationStatus;
     bool isReady;
     bool starterTimerOver;
+    [SerializeField] bool byPassStopper = true;
 
     [SerializeField] float timeBeforeStart = 2f;
     [SerializeField] float startXThresholdValue;
@@ -80,10 +81,13 @@ public class RoateObjectGyroscope : MonoBehaviour
             }
         }
 
-        if (isReady)
+        if (GameData.shouldRoate || byPassStopper)
         {
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * rotateSpeed);
-            rotationValueResult.text = "Rotation object: " + result;
+            if (isReady)
+            {
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * rotateSpeed);
+                rotationValueResult.text = "Rotation object: " + result;
+            }
         }
     }
 

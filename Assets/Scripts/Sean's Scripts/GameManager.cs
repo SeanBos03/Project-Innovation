@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool debug_disableTimer = false;
     void Start()
     {
+        GameData.shouldRoate = true;
         timerSlider.maxValue = amountOfTimeSeconds;
         timerSlider.value = amountOfTimeSeconds;
         GameData.rotationReady = false;
