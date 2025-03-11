@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI lifeAmountText;
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI stickText;
+    [SerializeField] Slider timerSlider;
     [SerializeField] bool debug_disableTimer = false;
     void Start()
     {
+        timerSlider.maxValue = amountOfTimeSeconds;
+        timerSlider.value = amountOfTimeSeconds;
         GameData.rotationReady = false;
         if (GameData.timeRanOut)
         {
@@ -38,6 +42,7 @@ public class GameManager : MonoBehaviour
     void Timercountdown()
     {
         amountOfTimeSeconds--;
+        timerSlider.value = amountOfTimeSeconds;
         timerText.text = "Time: " + amountOfTimeSeconds;
 
         if (amountOfTimeSeconds <= 0)
