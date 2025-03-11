@@ -318,5 +318,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7a1f8123ab73747a727eabadabb775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDisppear: 10
+  timeTillDisppear: 5
   amountOfDamage: 1
