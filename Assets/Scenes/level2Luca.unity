@@ -1074,8 +1074,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1091851930}
-  swipeSpeed: 0.1
-  zoomSpeed: 0.1
+  swipeSpeed: 0.02
+  zoomSpeed: 0.02
   pinchThreshold: 5
   minRotationY: -46.3
   maxRotationY: 43.8
@@ -3635,8 +3635,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0037882568, y: 0.005890824, z: 0.0004529965}
-  m_Center: {x: -0.00083720015, y: -0.0002333891, z: 0.000075173484}
+  m_Size: {x: 0.0045264955, y: 0.006771755, z: 0.0004529965}
+  m_Center: {x: -0.0012063192, y: -0.00035265676, z: 0.000075173484}
 --- !u!65 &677027136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3656,8 +3656,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0036598088, y: 0.0027258226, z: 0.00043695857}
-  m_Center: {x: 0.002847898, y: 0.0013491106, z: 0.00008731319}
+  m_Size: {x: 0.00417929, y: 0.0032891452, z: 0.00043695854}
+  m_Center: {x: 0.0031076388, y: 0.0016307724, z: 0.00008731319}
 --- !u!65 &677027137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7170,9 +7170,9 @@ MonoBehaviour:
   timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
-  rotateSpeed: 1.5
-  xMaxValue: 25
-  zMaxValue: 25
+  rotateSpeed: 1
+  xMaxValue: 20
+  zMaxValue: 20
   invertX: 0
   invertZ: 1
   switchValues: 1
