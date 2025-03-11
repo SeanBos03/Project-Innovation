@@ -19,7 +19,7 @@ public class PushObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (theLoudnessRecorder.loudDetected)
+        if (theLoudnessRecorder.loudDetected || isPushing)
         {
             pushText.text = "Push: ON";
         }
