@@ -1952,8 +1952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1520038698}
-  swipeSpeed: 0.2
-  zoomSpeed: 0.23
+  swipeSpeed: 0.1
+  zoomSpeed: 0.1
   pinchThreshold: 5
   minRotationY: -46.3
   maxRotationY: 43.8
@@ -2893,9 +2893,9 @@ MonoBehaviour:
     type: 3}
   heightForkFallFromSurface: 50
   cycleTime: 3
-  amountOfForkPerCycle: 4
-  minSpawnDistance: 2
-  timesBeforeSpawnReset: 3
+  amountOfForkPerCycle: 5
+  minSpawnDistance: 4
+  timesBeforeSpawnReset: 1
 --- !u!1001 &556943775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3498,6 +3498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198726674119364413, guid: 96cc5e37dbc8edb46a478bd7fb429607,
+        type: 3}
+      propertyPath: timeTillDisppear
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8342347508067989656, guid: 96cc5e37dbc8edb46a478bd7fb429607,
         type: 3}
@@ -7627,7 +7632,7 @@ PrefabInstance:
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 167.99
+      value: 180.07
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
@@ -9020,10 +9025,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.007507138, y: 0.00542182, z: 0.0001661662}
-  m_Center: {x: 0.0010222405, y: 0.0000011140182, z: 0.0001698295}
+  m_Size: {x: 0.0037882568, y: 0.005890824, z: 0.0004529965}
+  m_Center: {x: -0.00083720015, y: -0.0002333891, z: 0.000075173484}
 --- !u!65 &1769790390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9041,10 +9046,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0001610069, y: 0.0019178621, z: 0.0011074529}
-  m_Center: {x: 0.0009936539, y: -0.0016409724, z: 0.0008608528}
+  m_Size: {x: 0.0036598088, y: 0.0027258226, z: 0.00043695857}
+  m_Center: {x: 0.002847898, y: 0.0013491106, z: 0.00008731319}
 --- !u!65 &1769790391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9104,10 +9109,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00017901226, y: 0.00542182, z: 0.0011074529}
-  m_Center: {x: 0.0046863034, y: 0.0000011136226, z: 0.00086085254}
+  m_Size: {x: 0.0006126515, y: 0.005778312, z: 0.001107453}
+  m_Center: {x: 0.004903123, y: -0.00017713233, z: 0.0008608525}
 --- !u!65 &1769790394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9125,10 +9130,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.007494481, y: 0.00010695457, z: 0.0011074529}
-  m_Center: {x: 0.0010159116, y: -0.0026545248, z: 0.0008608529}
+  m_Size: {x: 0.007494481, y: 0.00053917506, z: 0.0011074528}
+  m_Center: {x: 0.0010159116, y: -0.002870635, z: 0.00086085295}
 --- !u!65 &1769790395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9146,10 +9151,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00013199422, y: 0.005434305, z: 0.0011074529}
-  m_Center: {x: -0.0026656403, y: -0.000005141008, z: 0.00086085254}
+  m_Size: {x: 0.00044084777, y: 0.0057738493, z: 0.001107453}
+  m_Center: {x: -0.002820067, y: -0.00017491324, z: 0.0008608525}
 --- !u!65 &1769790396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9167,10 +9172,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0073735453, y: 0.00010971379, z: 0.0011074529}
-  m_Center: {x: 0.001089037, y: 0.0026571916, z: 0.0008608522}
+  m_Size: {x: 0.008335627, y: 0.0005971305, z: 0.001107453}
+  m_Center: {x: 0.0010582112, y: 0.0029008994, z: 0.0008608522}
 --- !u!23 &1769790397
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9689,7 +9694,7 @@ MonoBehaviour:
   timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
-  rotateSpeed: 2.5
+  rotateSpeed: 1.5
   xMaxValue: 25
   zMaxValue: 25
   invertX: 0
@@ -10507,7 +10512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2039919993
 Transform:
   m_ObjectHideFlags: 0

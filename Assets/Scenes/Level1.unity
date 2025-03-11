@@ -686,17 +686,17 @@ PrefabInstance:
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8788085
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.77
+      value: 8.56
       objectReference: {fileID: 0}
     - target: {fileID: 2804872156504845504, guid: e8551693318463844a1547b20187c7a0,
         type: 3}
@@ -1693,8 +1693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 463496438}
-  swipeSpeed: 0.2
-  zoomSpeed: 0.23
+  swipeSpeed: 0.1
+  zoomSpeed: 0.1
   pinchThreshold: 5
   minRotationY: -46.3
   maxRotationY: 43.8
@@ -2937,8 +2937,8 @@ Transform:
   m_GameObject: {fileID: 919132148491807544}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -0.68206, y: 2.3276, z: 7.9765}
+  m_LocalScale: {x: 43.90315, y: 43.90315, z: 43.90315}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6951869188453925016}
@@ -3024,9 +3024,9 @@ MonoBehaviour:
   timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
-  rotateSpeed: 1
-  xMaxValue: 25
-  zMaxValue: 25
+  rotateSpeed: 2
+  xMaxValue: 15
+  zMaxValue: 15
   invertX: 0
   invertZ: 0
   switchValues: 0
