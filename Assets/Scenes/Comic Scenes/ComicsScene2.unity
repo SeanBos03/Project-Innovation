@@ -165,6 +165,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 27a93df091fb1ba43bcb6a36f18482cd,
         type: 3}
+    - target: {fileID: 3429534465990145439, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
+      propertyPath: sceneName
+      value: level2Luca
+      objectReference: {fileID: 0}
     - target: {fileID: 7177711127576069914, guid: 84053cf3645792445b1d4100220c30f5,
         type: 3}
       propertyPath: m_Name
