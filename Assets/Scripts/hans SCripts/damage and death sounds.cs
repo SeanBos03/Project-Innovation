@@ -8,15 +8,19 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioClip damageSound;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip rollSound;
+    [SerializeField] private AudioClip buttonClickSound;
+    [SerializeField] private AudioClip randomSound;
     private PlayerScript playerScript;
     private Rigidbody rb;
     private int lastLife;
+    private float nextRandomSoundTime;
 
     void Start()
     {
         playerScript = GetComponent<PlayerScript>();
         rb = GetComponent<Rigidbody>();
         lastLife = GameData.life;
+        ScheduleNextRandomSound();
     }
 
     void Update()
@@ -49,6 +53,12 @@ public class PlayerAudio : MonoBehaviour
         {
             audioSource.Stop();
         }
+
+        if (Time.time >= nextRandomSoundTime)
+        {
+            PlaySound(randomSound);
+            ScheduleNextRandomSound();
+        }
     }
 
     private void PlaySound(AudioClip clip)
@@ -57,6 +67,16 @@ public class PlayerAudio : MonoBehaviour
         {
             audioSource.PlayOneShot(clip);
         }
+    }
+
+    private void ScheduleNextRandomSound()
+    {
+        nextRandomSoundTime = Time.time + Random.Range(5f, 15f);
+    }
+
+    public void PlayButtonClickSound()
+    {
+        PlaySound(buttonClickSound);
     }
 }
 
