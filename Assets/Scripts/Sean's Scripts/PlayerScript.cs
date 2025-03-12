@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
                 GameData.life += other.gameObject.GetComponent<HealhItem>().GetHealth();
                 Destroy(other.gameObject);
             }
-
         }
 
         if (GameData.life <= 0)

@@ -20,7 +20,7 @@ public class RoateObjectGyroscope : MonoBehaviour
     [SerializeField] float timeBeforeStart = 2f;
     [SerializeField] float startXThresholdValue;
     [SerializeField] float startZThresholdValue;
-    [SerializeField] float rotateSpeed = 1.5f;
+  //  [SerializeField] float rotateSpeed = 1.5f;
     [SerializeField] float xMaxValue;
     [SerializeField] float zMaxValue;
 
@@ -85,7 +85,7 @@ public class RoateObjectGyroscope : MonoBehaviour
         {
             if (isReady)
             {
-                transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * rotateSpeed);
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * GameData.gyroRotationSpeed);
                 rotationValueResult.text = "Rotation object: " + result;
             }
         }
