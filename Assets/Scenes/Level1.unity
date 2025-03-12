@@ -1928,7 +1928,7 @@ MonoBehaviour:
   rotateSpeed: 2
   xMaxValue: 15
   zMaxValue: 15
-  invertX: 0
+  invertX: 1
   invertZ: 0
   switchValues: 0
 --- !u!4 &1164649275
@@ -3986,6 +3986,51 @@ PrefabInstance:
       propertyPath: theGameManager
       value: 
       objectReference: {fileID: 1005241671}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5714394
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.079064
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.25714603
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741519943535784828, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
