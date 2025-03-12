@@ -551,8 +551,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 56a9e739ce88342438bdaf4b56e8bcd0, type: 3}
   - {fileID: 21300000, guid: ecdd79d7a82f1a846acfbe79ab562e6d, type: 3}
   - {fileID: 21300000, guid: e06e87b079d699e4b98275791c9b4c7e, type: 3}
-  fadeDuration: 0.2
-  displayDuration: 1
+  fadeDuration: 0.5
+  displayDuration: 2.5
   imageSizes:
   - {x: 2400, y: 1080}
   - {x: 2400, y: 1080}
