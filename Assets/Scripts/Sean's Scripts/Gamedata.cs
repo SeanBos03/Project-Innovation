@@ -1,6 +1,7 @@
 using UnityEngine;
 public static class GameData
 {
+    public static float gyroRotationSpeed;
     public static float gameVolume;
     public static Quaternion mainCamDeaultRotation;
     public static int currentLevel = 1;

@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverArea : MonoBehaviour
+public class NewSceneArea : MonoBehaviour
 {
+    [SerializeField] string theName;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(theName);
         }
     }
 }

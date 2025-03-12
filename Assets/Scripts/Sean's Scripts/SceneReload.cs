@@ -9,6 +9,11 @@ public class SceneReload : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void ToScene(string theSceneName)
+    {
+        SceneManager.LoadScene(theSceneName);
+    }
+
     public void ToScene2()
     {
         SceneManager.LoadScene("Level2");

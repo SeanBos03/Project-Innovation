@@ -5018,18 +5018,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 466355852}
     - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToScene1
+      value: ToScene
       objectReference: {fileID: 0}
     - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneReload, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790676747108018299, guid: 306b37c0e22737943bc0abdf4d8341f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2671016968463035667, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -7752,7 +7777,6 @@ MonoBehaviour:
   timeBeforeStart: 0.2
   startXThresholdValue: 1000
   startZThresholdValue: 1000
-  rotateSpeed: 2.5
   xMaxValue: 25
   zMaxValue: 25
   invertX: 0
@@ -10544,7 +10568,6 @@ MonoBehaviour:
   timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
-  rotateSpeed: 2.5
   xMaxValue: 25
   zMaxValue: 25
   invertX: 0
@@ -11891,6 +11914,16 @@ PrefabInstance:
       propertyPath: pushText
       value: 
       objectReference: {fileID: 578576279}
+    - target: {fileID: 3092243986244737181, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092243986244737181, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 316997031}
     - target: {fileID: 3157499563969100527, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11919,7 +11952,7 @@ PrefabInstance:
     - target: {fileID: 3157499563969100527, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 150.60428
+      value: 156
       objectReference: {fileID: 0}
     - target: {fileID: 3157499563969100527, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
@@ -12055,11 +12088,11 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1881834228}
   - {fileID: 432584008}
   - {fileID: 466355853}
   - {fileID: 227563612}
   - {fileID: 848904798}
-  - {fileID: 1881834228}
   - {fileID: 658893398}
   - {fileID: 1393426290}
   - {fileID: 1718640807}
