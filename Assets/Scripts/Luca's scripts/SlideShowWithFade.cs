@@ -56,7 +56,7 @@ public class SlideshowWithCrossfade : MonoBehaviour
         fadingInImage.sprite = slides[currentIndex];
         fadingInImage.canvasRenderer.SetAlpha(0f); // Start completely transparent
 
-        // Ensure fading-out image is fully visible before fade starts
+        
         fadingOutImage.canvasRenderer.SetAlpha(1f);
 
         //crossfade transition
