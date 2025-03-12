@@ -2169,7 +2169,7 @@ GameObject:
   - component: {fileID: 1519163141}
   - component: {fileID: 1519163140}
   m_Layer: 0
-  m_Name: src dont touch
+  m_Name: src (dont touch)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

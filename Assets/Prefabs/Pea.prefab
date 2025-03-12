@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4273876617453106543}
   - component: {fileID: 8279634057859316110}
   - component: {fileID: 3244085366968245814}
+  - component: {fileID: 184954328551818314}
   m_Layer: 7
   m_Name: Pea
   m_TagString: Untagged
@@ -134,3 +135,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &184954328551818314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901489933700320658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148d53c14b600aa4db0aebd532afbde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  rollingSound: {fileID: 8300000, guid: c3ef308d920bcbe4ba9390942b1c801e, type: 3}
