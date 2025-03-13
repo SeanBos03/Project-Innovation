@@ -9,6 +9,8 @@ public class NewSceneArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(theName);
+            GameData.inTurortrial = false;
+            GameData.TurtorialStage = 0;
         }
     }
 }

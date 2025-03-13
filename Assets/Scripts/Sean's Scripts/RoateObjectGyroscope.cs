@@ -126,7 +126,7 @@ public class RoateObjectGyroscope : MonoBehaviour
 
                         if (xRotated && zRotated)
                         {
-                            GameData.TurtorialStage = 4;
+                            Invoke("Contiue11", 2f);
                         }
                     }
                 }
@@ -231,5 +231,10 @@ public class RoateObjectGyroscope : MonoBehaviour
         rotationValueGyro.text = "Rotation gyro: " + gyro.attitude.eulerAngles;
         rotationValueObject.text = "Rotation result: " + gyroRotationEulerResult;
         return gyroRotationEulerResult;
+    }
+
+    void Contiue11()
+    {
+        GameData.TurtorialStage = 4;
     }
 }

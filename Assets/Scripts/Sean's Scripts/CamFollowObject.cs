@@ -73,13 +73,6 @@ public class CamFollowObject : MonoBehaviour
         }
         else if (touch.phase == TouchPhase.Moved && isSwiping && !GameData.swipeLock)
         {
-            if (affectByturtorial)
-            {
-                if (GameData.TurtorialStage == 5)
-                {
-                    Invoke("Continueturtorial", 2f);
-                }
-            }
 
             Vector2 delta = touch.position - lastTouchPosition;
             lastTouchPosition = touch.position;
@@ -126,6 +119,13 @@ public class CamFollowObject : MonoBehaviour
 
             if (isZooming)
             {
+                if (affectByturtorial)
+                {
+                    if (GameData.TurtorialStage == 5)
+                    {
+                        Invoke("Continueturtorial", 0.5f);
+                    }
+                }
                 zoomDistance -= pinchDelta * zoomSpeed;
                 zoomDistance = Mathf.Clamp(zoomDistance, minZoom, maxZoom);
             }

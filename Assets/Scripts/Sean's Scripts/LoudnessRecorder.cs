@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
 public class LoudnessRecorder : MonoBehaviour
@@ -27,6 +28,11 @@ public class LoudnessRecorder : MonoBehaviour
         {
             loudMess.text = "Loud detected";
             loudDetected = true;
+
+            if (GameData.TurtorialStage == 7)
+            {
+                Invoke("Continue11", 2f);
+            }
         }
 
         else
@@ -34,6 +40,11 @@ public class LoudnessRecorder : MonoBehaviour
             loudMess.text = "Loud not detected";
             loudDetected = false;
         }
+    }
+
+    void Continue11()
+    {
+        GameData.TurtorialStage = 8;
     }
 
     //clipPosition - position in the audio clip where we want to check the loudness
