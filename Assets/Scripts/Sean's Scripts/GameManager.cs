@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
             GameData.gameStarts = true;
             timerMessage.gameObject.SetActive(true);
             Invoke("DisableTimerMessage", amountOfTimeOutMessageSeconds);
+            theUi.SetActive(true);
+            orbitCam.SetActive(false);
+            viewRotationCam.SetActive(true);
+            playerCam.SetActive(true);
         }
 
         GameData.mainCamDeaultRotation = mainCam.transform.rotation;

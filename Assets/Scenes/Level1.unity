@@ -603,12 +603,12 @@ PrefabInstance:
     - target: {fileID: 3929187747040010321, guid: 5a153b8d4247f954084712ad99a2e1df,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929187747040010321, guid: 5a153b8d4247f954084712ad99a2e1df,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4227498014651748085, guid: 5a153b8d4247f954084712ad99a2e1df,
         type: 3}
@@ -1156,7 +1156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &633378982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2538,7 +2538,7 @@ MonoBehaviour:
   xMaxValue: 15
   zMaxValue: 15
   invertX: 1
-  invertZ: 0
+  invertZ: 1
   switchValues: 0
 --- !u!4 &1164649275
 Transform:
@@ -5651,6 +5651,21 @@ PrefabInstance:
       propertyPath: pushText
       value: 
       objectReference: {fileID: 1511369275}
+    - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: forceStrength
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: forceDirection.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: forceDirection.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3092243986244737181, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: m_Cameras.Array.size
