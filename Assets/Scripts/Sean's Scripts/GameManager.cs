@@ -130,6 +130,5 @@ public class GameManager : MonoBehaviour
     public void ResetCam()
     {
         mainCam.transform.rotation = GameData.mainCamDeaultRotation;
-        Debug.Log(GameData.mainCamDeaultRotation.eulerAngles);
     }
 }
