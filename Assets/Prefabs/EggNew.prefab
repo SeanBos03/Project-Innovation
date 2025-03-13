@@ -300,6 +300,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6731614626645404396}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aa34e6f46d7e22c43b5b7f4eba0f9229,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5300245904573346532}
   m_SourcePrefab: {fileID: 100100000, guid: aa34e6f46d7e22c43b5b7f4eba0f9229, type: 3}
 --- !u!1 &2349297578302267477 stripped
 GameObject:
@@ -429,6 +433,24 @@ MonoBehaviour:
   threshold: 0.15
   loudMess: {fileID: 0}
   loudDetected: 0
+--- !u!114 &5300245904573346532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349297578302267477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b0ef73100d2bc42ab573c970b1455e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: 7ea56771d51078049b30631187937549, type: 3}
+  deathSound: {fileID: 8300000, guid: 6b052934d6b336f4689a078fdccb62b9, type: 3}
+  rollSound: {fileID: 8300000, guid: 54344a85d80cf074a9a48258a1af3b37, type: 3}
+  buttonClickSound: {fileID: 8300000, guid: a076f1cab03a77442b84810409eb1790, type: 3}
+  randomSound: {fileID: 8300000, guid: 786e46c2e9d795043ba9f6e26e973a01, type: 3}
 --- !u!4 &3157499563969100527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa34e6f46d7e22c43b5b7f4eba0f9229,
