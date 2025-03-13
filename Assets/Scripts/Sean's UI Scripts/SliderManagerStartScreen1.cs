@@ -17,6 +17,6 @@ public class SliderManagerStartScreen1 : MonoBehaviour
     {
         GameData.gyroRotationSpeed = gyroRotationSpeedSlider.value;
         GameData.gameVolume = volumeSlider.value;
-        audioMixer.SetFloat("MusicVolMasterume", Mathf.Log10(GameData.gameVolume) * 20);
+        audioMixer.SetFloat("Master", Mathf.Log10(GameData.gameVolume) * 20);
     }
 }

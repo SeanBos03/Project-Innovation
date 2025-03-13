@@ -13,6 +13,7 @@ public static class GameData
     public static int life = 3;
     public static bool rotationReady = false;
     public static bool shouldRoate = true;
+    public static bool swipeLock = false;
     public static void Restart(int amountOfLife)
     {
         life = amountOfLife;
