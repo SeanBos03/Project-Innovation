@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject viewRotationCam;
     [SerializeField] GameObject playerCam;
     [SerializeField] GameObject theUi;
-    [SerializeField] int amountOfTimeBeforeGameStarts = 10;
+    [SerializeField] int secsBeforeStart = 10;
 
 
     bool gameCanStart = false;
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         if (!GameData.gameStarts)
         {
-            Invoke("GameOrbitTimer", amountOfTimeOutMessageSeconds);
+            Invoke("GameOrbitTimer", secsBeforeStart);
         }
 
     }
