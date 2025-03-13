@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: orange
+  m_Name: pink 1
   m_Shader: {fileID: 4800000, guid: 66b8e227bf46bbb45bd7ed861afb5b0e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -115,12 +115,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.8862745, g: 0.654902, b: 0.54509807, a: 1}
-    - _Color: {r: 1, g: 0.84339625, b: 0.9490127, a: 1}
+    - _BaseColor: {r: 0.9372549, g: 0.8627451, b: 0.6392157, a: 1}
+    - _Color: {r: 0.9547169, g: 0.9348202, b: 0.5169882, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4755583056278966921
+--- !u!114 &8955715271847423472
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

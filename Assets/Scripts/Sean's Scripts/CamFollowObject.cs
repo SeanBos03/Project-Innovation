@@ -23,7 +23,9 @@ public class CamFollowObject : MonoBehaviour
     private float lastPinchDistance;
     private bool isZooming = false;
 
-    private Quaternion initialRotation;
+    Quaternion initialRotation;
+
+    [SerializeField] bool affectByturtorial;
 
     void Start()
     {
@@ -71,6 +73,7 @@ public class CamFollowObject : MonoBehaviour
         }
         else if (touch.phase == TouchPhase.Moved && isSwiping && !GameData.swipeLock)
         {
+
             Vector2 delta = touch.position - lastTouchPosition;
             lastTouchPosition = touch.position;
 
@@ -84,6 +87,11 @@ public class CamFollowObject : MonoBehaviour
         {
             isSwiping = false;
         }
+    }
+
+    void Continueturtorial()
+    {
+        GameData.TurtorialStage = 6;
     }
 
     void HandleTwoFingerZoom()
@@ -111,6 +119,13 @@ public class CamFollowObject : MonoBehaviour
 
             if (isZooming)
             {
+                if (affectByturtorial)
+                {
+                    if (GameData.TurtorialStage == 5)
+                    {
+                        Invoke("Continueturtorial", 0.5f);
+                    }
+                }
                 zoomDistance -= pinchDelta * zoomSpeed;
                 zoomDistance = Mathf.Clamp(zoomDistance, minZoom, maxZoom);
             }
