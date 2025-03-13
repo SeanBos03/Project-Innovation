@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Comic Scenes/ComicsScene.unity
     guid: 09bc431e25e1d724a855cc6dd4717932
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level2Luca.unity
     guid: d3aa18014afee694889e8dfc00289dbb
   - enabled: 0
