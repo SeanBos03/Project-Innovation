@@ -8,6 +8,8 @@ public class GameOverArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameData.inTurortrial = false;
+            GameData.TurtorialStage = 0;
         }
     }
 }

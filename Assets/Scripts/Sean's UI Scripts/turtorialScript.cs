@@ -34,10 +34,15 @@ public class turtorialScript : MonoBehaviour
                     GameData.TurtorialStage = 5;
                     break;
                 case 6:
+                    turtorialText.text = "Blow on your phone to eggscape!";
+                    theImage.sprite = imageList[3];
+                    GameData.TurtorialStage = 7;
+                    break;
+                case 8:
                     rotationStatus.gameObject.SetActive(true);
                     turtorialText.gameObject.SetActive(false);
                     theImage.gameObject.SetActive(false);
-                    GameData.TurtorialStage = 7;
+                    GameData.TurtorialStage = 9;
                     break;
             }
         }
