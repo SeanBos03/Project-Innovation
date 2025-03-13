@@ -28,7 +28,11 @@ public class RoateObjectGyroscope : MonoBehaviour
     [SerializeField] bool invertZ;
     [SerializeField] bool switchValues;
 
+    [SerializeField] bool affectByTurtorial;
+
     bool gameIsReady = false;
+    bool xRotated;
+    bool zRotated;
 
     void StarterTimer()
     {
@@ -85,7 +89,15 @@ public class RoateObjectGyroscope : MonoBehaviour
                 {
                     isReady = true;
                     rotationStatus.text = "Start rotating";
-                    
+
+                    if (affectByTurtorial)
+                    {
+                        if (GameData.TurtorialStage == 1)
+                        {
+                            GameData.TurtorialStage = 2;
+                        }
+                    }
+
                     if (gameObject.tag == "MainArea")
                     {
                         GameData.rotationReady = true;
@@ -98,6 +110,27 @@ public class RoateObjectGyroscope : MonoBehaviour
         {
             if (isReady)
             {
+                if (affectByTurtorial)
+                {
+                    if (GameData.TurtorialStage == 3)
+                    {
+                        if (Mathf.Abs(result.x) >= xMaxValue * 0.8)
+                        {
+                            xRotated = true;
+                        }
+
+                        if (Mathf.Abs(result.z) >= zMaxValue * 0.8)
+                        {
+                            zRotated = true;
+                        }
+
+                        if (xRotated && zRotated)
+                        {
+                            GameData.TurtorialStage = 4;
+                        }
+                    }
+                }
+
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(result), Time.deltaTime * GameData.gyroRotationSpeed);
                 rotationValueResult.text = "Rotation object: " + result;
             }
@@ -195,8 +228,6 @@ public class RoateObjectGyroscope : MonoBehaviour
             gyroRotationEulerResult.z = gyroRotationEulerResult.x;
             gyroRotationEulerResult.x = theZValue;
         }
-
-        
         rotationValueGyro.text = "Rotation gyro: " + gyro.attitude.eulerAngles;
         rotationValueObject.text = "Rotation result: " + gyroRotationEulerResult;
         return gyroRotationEulerResult;

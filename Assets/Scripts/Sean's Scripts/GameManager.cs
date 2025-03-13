@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,11 +23,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerCam;
     [SerializeField] GameObject theUi;
     [SerializeField] int secsBeforeStart = 10;
-
-
+    [SerializeField] string turtorialSceneName = " ";
     bool gameCanStart = false;
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == turtorialSceneName)
+        {
+            GameData.inTurortrial = true;
+        }
+
         orbitCam.SetActive(true);
         GameData.gameStarts = false;
         GameData.shouldRoate = true;
