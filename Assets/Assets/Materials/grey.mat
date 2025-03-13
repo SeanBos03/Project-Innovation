@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dark brown
+  m_Name: grey
   m_Shader: {fileID: 4800000, guid: 66b8e227bf46bbb45bd7ed861afb5b0e, type: 3}
   m_Parent: {fileID: 2100000, guid: d418288fd58b52941a66259cd8071de7, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -26,10 +26,10 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _BaseColor: {r: 0.12941177, g: 0.07058824, b: 0.03137255, a: 1}
-    - _Color: {r: 0.7283019, g: 0.36516076, b: 0.2459736, a: 1}
+    - _BaseColor: {r: 0.5882353, g: 0.70980394, b: 0.7764706, a: 1}
+    - _Color: {r: 0.2513991, g: 0.2528302, b: 0.2528302, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8547556425390518575
+--- !u!114 &4749851215943911434
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
