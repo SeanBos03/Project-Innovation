@@ -2036,7 +2036,7 @@ MonoBehaviour:
   startZThresholdValue: 1
   xMaxValue: 15
   zMaxValue: 15
-  invertX: 1
+  invertX: 0
   invertZ: 0
   switchValues: 0
 --- !u!4 &1164649275
@@ -4210,7 +4210,7 @@ PrefabInstance:
     - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: forceStrength
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
@@ -4220,7 +4220,7 @@ PrefabInstance:
     - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: forceDirection.z
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3092243986244737181, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
