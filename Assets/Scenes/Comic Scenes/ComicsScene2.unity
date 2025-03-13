@@ -132,6 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1983657051603246026, guid: 84053cf3645792445b1d4100220c30f5,
         type: 3}
+      propertyPath: displayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983657051603246026, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
       propertyPath: slides.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -169,6 +174,23 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922260148970189309, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e2ccbd5fa4a03604992c5b6dc0e2388d,
+        type: 2}
+    - target: {fileID: 3922260148970189309, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1856391482108769817, guid: e2ccbd5fa4a03604992c5b6dc0e2388d,
+        type: 2}
+    - target: {fileID: 3922260148970189309, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7177711127576069914, guid: 84053cf3645792445b1d4100220c30f5,
         type: 3}
@@ -258,11 +280,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 7ca83750f2104b34d8968fc737552449,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9c90bf64994aad64d8d890afd33f8cec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 144b13ef843d1024ba52b7581f7c110e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.41
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
