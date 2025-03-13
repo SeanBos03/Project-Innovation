@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
             GameData.gameStarts = true;
             timerMessage.gameObject.SetActive(true);
             Invoke("DisableTimerMessage", amountOfTimeOutMessageSeconds);
+            theUi.SetActive(true);
+            orbitCam.SetActive(false);
+            viewRotationCam.SetActive(true);
+            playerCam.SetActive(true);
         }
 
         GameData.mainCamDeaultRotation = mainCam.transform.rotation;
@@ -126,6 +130,5 @@ public class GameManager : MonoBehaviour
     public void ResetCam()
     {
         mainCam.transform.rotation = GameData.mainCamDeaultRotation;
-        Debug.Log(GameData.mainCamDeaultRotation.eulerAngles);
     }
 }
