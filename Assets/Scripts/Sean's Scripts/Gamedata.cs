@@ -3,7 +3,7 @@ public static class GameData
 {
     public static bool gameStarts;
     public static float gyroRotationSpeed = 1.5f;
-    public static float gameVolume;
+    public static float gameVolume = 0.5f; //10 --> double the value
     public static Quaternion mainCamDeaultRotation;
     public static int currentLevel = 1;
     public static bool timeRanOut = false;

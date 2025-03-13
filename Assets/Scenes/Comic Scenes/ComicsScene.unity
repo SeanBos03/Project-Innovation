@@ -133,7 +133,14 @@ PrefabInstance:
     - target: {fileID: 3429534465990145439, guid: 84053cf3645792445b1d4100220c30f5,
         type: 3}
       propertyPath: sceneName
-      value: Level1Luca
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922260148970189309, guid: 84053cf3645792445b1d4100220c30f5,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press to continue...
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7177711127576069914, guid: 84053cf3645792445b1d4100220c30f5,
         type: 3}
