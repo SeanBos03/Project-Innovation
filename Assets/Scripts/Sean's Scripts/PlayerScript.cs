@@ -29,6 +29,11 @@ public class PlayerScript : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        CheckHealth();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.CompareTag("Health"))
         {
             if (GameData.life != GameData.lifeMax)
@@ -38,11 +43,16 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        CheckHealth();
+    }
+
+    void CheckHealth()
+    {
         if (GameData.life <= 0)
         {
             GameData.life = GameData.lifeMax;
             theGameManager.GetComponent<SceneReload>().RestartScene();
-            
+
         }
 
         if (GameData.life > GameData.lifeMax)

@@ -5671,10 +5671,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6572917136223960198, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8481401765802682908, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
         type: 3}
       propertyPath: m_Name
       value: HealthItemHeart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481401765802682908, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 9149112484533792934, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
         type: 3}
@@ -5726,7 +5736,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4909705895768455768, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8157,10 +8168,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6572917136223960198, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8481401765802682908, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
         type: 3}
       propertyPath: m_Name
       value: HealthItemHeart (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481401765802682908, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 9149112484533792934, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc,
         type: 3}
@@ -8212,7 +8233,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4909705895768455768, guid: 03d8a3c89a6ea9c4e865745a6eb4ecfc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12427,6 +12449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911739203656173458, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 6731614626645404396, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
