@@ -7147,6 +7147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2349297578302267477, guid: 8ab4f84652de9c34fb69703b37a552f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2875868857682867228, guid: 8ab4f84652de9c34fb69703b37a552f5,
         type: 3}
       propertyPath: pushText
