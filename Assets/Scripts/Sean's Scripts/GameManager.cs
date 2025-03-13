@@ -16,16 +16,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI stickText;
     [SerializeField] Slider timerSlider;
     [SerializeField] bool debug_disableTimer = false;
+
+    [SerializeField] GameObject orbitCam;
+    [SerializeField] GameObject viewRotationCam;
+    [SerializeField] GameObject playerCam;
+    [SerializeField] GameObject theUi;
+    [SerializeField] int secsBeforeStart = 10;
+
+
+    bool gameCanStart = false;
     void Start()
     {
+        orbitCam.SetActive(true);
+        GameData.gameStarts = false;
         GameData.shouldRoate = true;
         timerSlider.maxValue = amountOfTimeSeconds;
         timerSlider.value = amountOfTimeSeconds;
         GameData.rotationReady = false;
-        if (GameData.timeRanOut)
+
+        if (GameData.timeRanOut) //if player didnt suceed from time out
         {
+            GameData.gameStarts = true;
             timerMessage.gameObject.SetActive(true);
             Invoke("DisableTimerMessage", amountOfTimeOutMessageSeconds);
+            theUi.SetActive(true);
+            orbitCam.SetActive(false);
+            viewRotationCam.SetActive(true);
+            playerCam.SetActive(true);
         }
 
         GameData.mainCamDeaultRotation = mainCam.transform.rotation;
@@ -33,11 +50,11 @@ public class GameManager : MonoBehaviour
         GameData.life = amountOfLives;
         GameData.lifeMax = amountOfLives;
 
-        if (!debug_disableTimer)
+        if (!GameData.gameStarts)
         {
-            InvokeRepeating("Timercountdown", 1f, 1f);
+            Invoke("GameOrbitTimer", secsBeforeStart);
         }
-        
+
     }
 
     void Timercountdown()
@@ -53,15 +70,45 @@ public class GameManager : MonoBehaviour
             sceneReload.RestartScene();
         }
     }
-
     void DisableTimerMessage()
     {
         GameData.timeRanOut = false;
         timerMessage.gameObject.SetActive(false);
     }
 
+    void GameStart()
+    {
+        if (!GameData.gameStarts)
+        {
+            GameData.gameStarts = true;
+        }
+
+        if (!debug_disableTimer)
+        {
+            InvokeRepeating("Timercountdown", 1f, 1f);
+        }
+
+        theUi.SetActive(true);
+        orbitCam.SetActive(false);
+        viewRotationCam.SetActive(true);
+        playerCam.SetActive(true);
+
+    }
+    void GameOrbitTimer()
+    {
+        GameStart();
+    }
+
     void Update()
     {
+        if (!GameData.gameStarts)
+        {
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                GameStart();
+            }
+        }
+
         lifeAmountText.text = "Lives: " + GameData.life;
 
         if (GameData.shouldStick)
@@ -83,6 +130,5 @@ public class GameManager : MonoBehaviour
     public void ResetCam()
     {
         mainCam.transform.rotation = GameData.mainCamDeaultRotation;
-        Debug.Log(GameData.mainCamDeaultRotation.eulerAngles);
     }
 }

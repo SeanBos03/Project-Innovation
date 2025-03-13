@@ -69,7 +69,7 @@ public class CamFollowObject : MonoBehaviour
             lastTouchPosition = touch.position;
             isSwiping = true;
         }
-        else if (touch.phase == TouchPhase.Moved && isSwiping)
+        else if (touch.phase == TouchPhase.Moved && isSwiping && !GameData.swipeLock)
         {
             Vector2 delta = touch.position - lastTouchPosition;
             lastTouchPosition = touch.position;

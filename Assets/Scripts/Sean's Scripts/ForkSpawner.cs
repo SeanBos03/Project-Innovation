@@ -16,11 +16,19 @@ public class ForkSpawner : MonoBehaviour
     private Renderer theRenderer;
     private List<Vector3> previousSpawnedForks = new List<Vector3>(); //list to track previous spawn positions
 
-    void Start()
-    {
-        theRenderer = GetComponent<Renderer>();
-        InvokeRepeating("SpawnFork", 0f, cycleTime);
+    bool isReady = false;
 
+    void Update()
+    {
+        if (!isReady)
+        {
+            if (GameData.gameStarts)
+            {
+                theRenderer = GetComponent<Renderer>();
+                InvokeRepeating("SpawnFork", 0f, cycleTime);
+                isReady = true;
+            }
+        }
     }
 
     void SpawnFork()

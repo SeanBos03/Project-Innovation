@@ -342,9 +342,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1164152808604532514}
   forkSounds:
-  - {fileID: 8300000, guid: 6b99548bbc6db504380673abce60d0df, type: 3}
-  - {fileID: 8300000, guid: 0e898567db3d1d647b13782d97cc6278, type: 3}
-  - {fileID: 8300000, guid: d78b426d769be904cbcb832b0ae987a6, type: 3}
+  - {fileID: 8300000, guid: d3b15423678b00144b0697a34187acbe, type: 3}
+  - {fileID: 8300000, guid: 78552824bace6384081fc3d99ca082bc, type: 3}
+  - {fileID: 8300000, guid: 509c940bf0b7d9e459eb618576613247, type: 3}
 --- !u!82 &1164152808604532514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.413
   m_Pitch: 1
   Loop: 0
   Mute: 0

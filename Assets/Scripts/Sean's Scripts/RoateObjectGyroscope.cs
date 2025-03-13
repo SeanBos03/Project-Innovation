@@ -27,26 +27,8 @@ public class RoateObjectGyroscope : MonoBehaviour
     [SerializeField] bool invertX;
     [SerializeField] bool invertZ;
     [SerializeField] bool switchValues;
-    void Start()
-    {
-        if (SystemInfo.supportsGyroscope)
-        {
-            gyroEnabled = true;
-            gyro = Input.gyro;
-            gyro.enabled = true;
-        }
 
-        else
-        {
-            rotationStatus.text = "Gyroscope not supported";
-        }
-
-        if (gyroEnabled)
-        {
-            rotationStatus.text = "Starting...";
-            Invoke("StarterTimer", timeBeforeStart);
-        }
-    }
+    bool gameIsReady = false;
 
     void StarterTimer()
     {
@@ -54,8 +36,39 @@ public class RoateObjectGyroscope : MonoBehaviour
         rotationStatus.text = "Rotate phone to good orientation";
     }
 
+    void ThingsStart()
+    {
+        if (!gameIsReady)
+        {
+            if (GameData.gameStarts)
+            {
+                if (SystemInfo.supportsGyroscope)
+                {
+                    gyroEnabled = true;
+                    gyro = Input.gyro;
+                    gyro.enabled = true;
+                }
+
+                else
+                {
+                    rotationStatus.text = "Gyroscope not supported";
+                }
+
+                if (gyroEnabled)
+                {
+                    rotationStatus.text = "Starting...";
+                    Invoke("StarterTimer", timeBeforeStart);
+                }
+
+                gameIsReady = true;
+            }
+        }
+    }
+
     void Update()
     {
+        ThingsStart();
+
         if (!gyroEnabled)
         {
             return;
