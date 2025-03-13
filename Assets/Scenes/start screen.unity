@@ -1953,6 +1953,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1535432598}
     m_Modifications:
+    - target: {fileID: 155638752400270222, guid: 03e502a09f1d35543a9dcd0f6b55d625,
+        type: 3}
+      propertyPath: m_Value
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 155638752400270222, guid: 03e502a09f1d35543a9dcd0f6b55d625,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1919246887288489770, guid: 03e502a09f1d35543a9dcd0f6b55d625,
         type: 3}
       propertyPath: m_Name
