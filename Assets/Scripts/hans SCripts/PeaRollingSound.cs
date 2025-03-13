@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PeaRollingSound : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     [SerializeField] private AudioClip rollingSound;
     private Rigidbody rb;
 

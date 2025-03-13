@@ -735,7 +735,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 6b052934d6b336f4689a078fdccb62b9, type: 3}
   rollSound: {fileID: 8300000, guid: 54344a85d80cf074a9a48258a1af3b37, type: 3}
   buttonClickSound: {fileID: 8300000, guid: a076f1cab03a77442b84810409eb1790, type: 3}
-  randomSound: {fileID: 8300000, guid: ed17acc7a5a0af74997f1f5d8cccd472, type: 3}
+  randomSound: {fileID: 8300000, guid: 786e46c2e9d795043ba9f6e26e973a01, type: 3}
 --- !u!1 &464426531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1882,11 @@ MonoBehaviour:
   stickText: {fileID: 1657462130}
   timerSlider: {fileID: 291524025}
   debug_disableTimer: 0
+  orbitCam: {fileID: 0}
+  viewRotationCam: {fileID: 0}
+  playerCam: {fileID: 0}
+  theUi: {fileID: 0}
+  secsBeforeStart: 10
 --- !u!114 &1005241672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1967,7 +1972,6 @@ MonoBehaviour:
   timeBeforeStart: 0.2
   startXThresholdValue: 1000
   startZThresholdValue: 1000
-  rotateSpeed: 2.5
   xMaxValue: 25
   zMaxValue: 25
   invertX: 0
@@ -2260,7 +2264,6 @@ MonoBehaviour:
   timeBeforeStart: 2
   startXThresholdValue: 1
   startZThresholdValue: 1
-  rotateSpeed: 2
   xMaxValue: 15
   zMaxValue: 15
   invertX: 0
