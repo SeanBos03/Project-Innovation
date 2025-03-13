@@ -3110,6 +3110,7 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   theUi: {fileID: 0}
   secsBeforeStart: 10
+  turtorialSceneName: ' '
 --- !u!114 &1005241672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,6 +3236,7 @@ MonoBehaviour:
   invertX: 0
   invertZ: 1
   switchValues: 1
+  affectByTurtorial: 0
 --- !u!65 &1014654679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3683,6 +3685,7 @@ MonoBehaviour:
   invertX: 0
   invertZ: 0
   switchValues: 0
+  affectByTurtorial: 0
 --- !u!4 &1164649275
 Transform:
   m_ObjectHideFlags: 0
@@ -5687,6 +5690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1850873243}
   - component: {fileID: 1850873242}
+  - component: {fileID: 1850873244}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -5725,6 +5729,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1850873244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850873241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0a7c1c08cf80845bda5cb682094b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartImages:
+  - {fileID: 517831337}
+  - {fileID: 1549793339}
+  - {fileID: 574623465}
+  fullHeartSprite: {fileID: 21300000, guid: ff4fc1582cc03ac4eaaf099ab0839cc4, type: 3}
+  emptyHeartSprite: {fileID: 21300000, guid: a9cd63df10d44e54ba311c8a72b1e6ab, type: 3}
 --- !u!1 &1880999221
 GameObject:
   m_ObjectHideFlags: 0

@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 7629962753204696206, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_Name
-      value: Button_Restart
+      value: Button_ToggleStick
       objectReference: {fileID: 0}
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -922,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1781
+      value: -1001
       objectReference: {fileID: 0}
     - target: {fileID: 7638054686895001398, guid: 306b37c0e22737943bc0abdf4d8341f4,
         type: 3}
@@ -1778,6 +1778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452299017}
   - component: {fileID: 452299013}
+  - component: {fileID: 452299016}
   - component: {fileID: 452299014}
   - component: {fileID: 452299015}
   m_Layer: 0
@@ -1815,8 +1816,8 @@ MonoBehaviour:
   amountOfTimeOutMessageSeconds: 3
   amountOfTimeSeconds: 120
   amountOfLives: 3
-  timerMessage: {fileID: 1024889835}
-  lifeAmountText: {fileID: 908037796}
+  timerMessage: {fileID: 1143242801}
+  lifeAmountText: {fileID: 1143242801}
   timerText: {fileID: 1143242801}
   stickText: {fileID: 1143242801}
   timerSlider: {fileID: 1096891451}
@@ -1826,7 +1827,7 @@ MonoBehaviour:
   playerCam: {fileID: 1850925470}
   theUi: {fileID: 1251417738}
   secsBeforeStart: 10
-  turtorialSceneName: Level1
+  turtorialSceneName: Level1Sean
 --- !u!114 &452299015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,6 +1841,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7ca83750f2104b34d8968fc737552449, type: 2}
+--- !u!114 &452299016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452299012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83f719056b91c4429530eac9dc825c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam1: {fileID: 0}
+  cam2: {fileID: 0}
+  cam3: {fileID: 0}
 --- !u!4 &452299017
 Transform:
   m_ObjectHideFlags: 0
@@ -2145,7 +2161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1516, y: 119}
+  m_AnchoredPosition: {x: -905, y: 119}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617308389
@@ -6013,7 +6029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1519, y: -117}
+  m_AnchoredPosition: {x: -905, y: -117}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820531136
