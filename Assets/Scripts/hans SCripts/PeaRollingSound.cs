@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PeaRollingSound : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    AudioSource audioSource;
     [SerializeField] private AudioClip rollingSound;
     private Rigidbody rb;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
     }
 
