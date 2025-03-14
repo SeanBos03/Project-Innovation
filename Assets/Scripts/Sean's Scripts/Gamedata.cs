@@ -1,6 +1,8 @@
 using UnityEngine;
 public static class GameData
 {
+    public static bool inTurortrial;
+    public static int TurtorialStage;
     public static bool gameStarts;
     public static float gyroRotationSpeed = 1.5f;
     public static float gameVolume = 0.5f; //10 --> double the value

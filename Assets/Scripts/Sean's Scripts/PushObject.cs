@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PushObject : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI pushText;
+   // [SerializeField] TextMeshProUGUI pushText;
     public Vector3 forceDirection = Vector3.forward;
     public float forceStrength = 10f;
     public bool isPushing = false;
@@ -21,12 +21,12 @@ public class PushObject : MonoBehaviour
     {
         if (theLoudnessRecorder.loudDetected || isPushing)
         {
-            pushText.text = "Push: ON";
+         //   pushText.text = "Push: ON";
         }
 
         else
         {
-            pushText.text = "Push: OFF";
+          //  pushText.text = "Push: OFF";
         }
 
         if (theLoudnessRecorder.loudDetected || isPushing)
