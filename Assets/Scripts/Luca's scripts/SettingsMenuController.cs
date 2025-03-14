@@ -4,20 +4,40 @@ public class SettingsMenuController : MonoBehaviour
 {
     [SerializeField] GameObject settingsMenu;
     [SerializeField] GameObject settingsButton;
-    [SerializeField] GameObject closeButton;
+  //  [SerializeField] GameObject closeButton;
+    [SerializeField] LockThing lockThing;
+
+    bool shouldClose = false;
 
     void Start()
     {
-        settingsButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OpenSettingsMenu);
-        closeButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(CloseSettingsMenu);
-    }
-    void OpenSettingsMenu()
-    {
-        settingsMenu.SetActive(true);
+        settingsButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(aaaa);
+        //closeButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(CloseSettingsMenu);
     }
 
-    void CloseSettingsMenu()
+    void aaaa()
     {
-        settingsMenu.SetActive(false);
+        if (!shouldClose)
+        {
+            settingsMenu.SetActive(true);
+            lockThing.LockSwipe();
+        }
+
+        else
+        {
+            settingsMenu.SetActive(false);
+            lockThing.UnlockSwipe();
+        }
+
+        shouldClose = !shouldClose;
     }
+    //void OpenSettingsMenu()
+    //{
+    //    settingsMenu.SetActive(true);
+    //}
+
+    //void CloseSettingsMenu()
+    //{
+    //    settingsMenu.SetActive(false);
+    //}
 }

@@ -2290,6 +2290,18 @@ MonoBehaviour:
   invertZ: 0
   switchValues: 0
   affectByTurtorial: 1
+--- !u!114 &691121699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 155638752400270222, guid: 03e502a09f1d35543a9dcd0f6b55d625,
+    type: 3}
+  m_PrefabInstance: {fileID: 676806882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &724666632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,6 +2409,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724666632}
   m_Mesh: {fileID: 6894428203817054813, guid: aa3bab074abc0f64299e78b8c2637ce0, type: 3}
+--- !u!114 &788042235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3169559337160912448, guid: 03e502a09f1d35543a9dcd0f6b55d625,
+    type: 3}
+  m_PrefabInstance: {fileID: 676806882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &816333437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2487,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 1860821858}
   settingsButton: {fileID: 88493905}
   closeButton: {fileID: 88493905}
+  lockThing: {fileID: 430716736}
 --- !u!1 &874747198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5560,8 +5585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7ca83750f2104b34d8968fc737552449, type: 2}
-  volumeSlider: {fileID: 0}
-  gyroRotationSpeedSlider: {fileID: 0}
+  volumeSlider: {fileID: 691121699}
+  gyroRotationSpeedSlider: {fileID: 788042235}
 --- !u!4 &2128800004
 Transform:
   m_ObjectHideFlags: 0
